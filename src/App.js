@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Items from "./components/Items";
 import Categirues from "./components/Categirues";
 import ShowFullItem from "./components/ShowFullItem";
+import itemData from "./shop/items.json";
+
 
 class App extends React.Component {
   constructor(props) {
@@ -11,87 +13,21 @@ class App extends React.Component {
     this.state = {
       orders: [],
       currentItems: [],
-      items: [
-        {
-          id: 1,
-          title: 'Toy Pudge',
-          img: 'toypudge.webp',
-          desc: 'Toy Buther model good luck.',
-          category: 'dota',
-          game: 'dota',
-          price: 2000
-        },
-        {
-          id: 2,
-          title: 'Shadow Fiend Arcana',
-          img: 'sf_arcana.webp',
-          desc: 'Dead zxc inside model good luck.',
-          category: 'dota',
-          game: 'dota',
-          price: 2000
-        },
-        {
-          id: 3,
-          title: 'Pudge',
-          img: 'pudge.webp',
-          desc: 'Buther model good luck.',
-          category: 'dota',
-          game: 'dota',
-          price: 2000
-        },
-        {
-          id: 4,
-          title: 'Shadow Fiend',
-          img: 'sf.webp',
-          desc: 'zxc model good luck.',
-          category: 'dota',
-          game: 'dota',
-          price: 2000
-        },
-        {
-          id: 5,
-          title: 'Blood Seeker',
-          img: 'bs.webp',
-          desc: 'Blood siknul model good luck.',
-          category: 'dota',
-          game: 'dota',
-          price: 2000
-        },
-        {
-          id: 6,
-          title: 'Genshin Impact - Skyward Blade',
-          img: 'skyward_blade.webp',
-          desc: 'Elegant weapon model from Genshin Impact.',
-          category: 'genshin',
-          game: 'genshin',
-          price: 6000
-        },
-        {
-          id: 7,
-          title: 'glock-18 fade',
-          img: 'glock.png',
-          desc: 'weapon model from cs.',
-          category: 'cs',
-          game: 'cs',
-          price: 1000
-        }
-      ],
+      items: itemData,
       showFullItem: false,
       fullItem: {}
     }
     this.state.currentItems = this.state.items
-    this.addToOrder = this.addToOrder.bind(this)
-    this.deleteOrder = this.deleteOrder.bind(this)
     this.chooseCategory = this.chooseCategory.bind(this)
     this.onShowItem = this.onShowItem.bind(this)
   }
   render() {
     return (
       <div className="wrapper">
-        <Header onShowItem={this.onShowItem} orders={this.state.orders} onDelete={this.deleteOrder}/>
+        <Header onClearOrders={this.clearOrders} onShowItem={this.onShowItem} orders={this.state.orders} onDelete={this.handleDeleteItem}/>
         <Categirues chooseCategory={this.chooseCategory}/>
-        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder}/>
-        {this.state.showFullItem && <ShowFullItem onShowItem={this.onShowItem} onAdd={this.addToOrder} item={this.state.fullItem}/>}
+        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.handleAddToCart}/>
+        {this.state.showFullItem && <ShowFullItem onShowItem={this.onShowItem} onAdd={this.handleAddToCart} item={this.state.fullItem}/>}
         <Footer />
       </div>
     )
@@ -113,20 +49,34 @@ class App extends React.Component {
     })
   }
 
-  addToOrder(item) {
-    let isIn = false
-    this.state.orders.forEach(el => {
-      if(el.id === item.id)
-        isIn = true
-    })
-    if(!isIn)
-      this.setState({orders: [...this.state.orders, item]}, () => {
-    })
-  }
+  handleAddToCart = (item) => {
+    this.setState((prevState) => {
+      const existingItem = prevState.orders.find(order => order.id === item.id);
+      if (existingItem) {
+        // Если товар уже есть в корзине, увеличиваем его количество
+        return {
+          orders: prevState.orders.map(order =>
+            order.id === item.id ? { ...order, quantity: order.quantity + 1 } : order
+          ),
+        };
+      } else {
+        // Если товара еще нет в корзине, добавляем его с quantity = 1
+        return {
+          orders: [...prevState.orders, { ...item, quantity: 1 }],
+        };
+      }
+    });
+  };
 
-  deleteOrder(id) {
-    this.setState({orders: this.state.orders.filter(el => el.id !== id)})
-  }
+  handleDeleteItem = (id) => {
+    this.setState((prevState) => ({
+      orders: prevState.orders.filter(order => order.id !== id),
+    }));
+  };
+
+  clearOrders = () => {
+    this.setState({ orders: [] });
+  };
 
 }
 

@@ -3,17 +3,22 @@ import { FaXmark, FaCartShopping } from "react-icons/fa6";
 import Order from './Order'
 import AboutModal from './AboutModal';
 import ContactModal from './ContactModal';
+import CheckoutModal from './CheckoutModal';
+import ConfirmationModal from './ConfirmationModal';
 
 
-const showOrders = (props, handleShowItem) => {
+
+const showOrders = (props, handleShowItem, setIsCheckoutOpen) => {
   let sum = 0;
-  props.orders.forEach(el => sum += el.price * el.quantity); // Изменение для подсчета суммы с учетом количества
+  props.orders.forEach(el => sum += el.price * el.quantity); // Учет количества товаров при подсчете суммы
   return (
     <div>
+      <button className='checkout-btn' onClick={() => setIsCheckoutOpen(true)}>Оформить заказ</button>
+      <p className='sum'>Сумма: {new Intl.NumberFormat().format(sum)} руб</p>
       {props.orders.map(el => (
         <Order onShowItem={handleShowItem} onDelete={props.onDelete} key={el.id} item={el} />
       ))}
-      <p className='sum'>Сумма: {new Intl.NumberFormat().format(sum)} руб</p>
+      <div>.</div>
     </div>
   );
 };
@@ -29,9 +34,11 @@ export default function Header(props) {
   const [showFixedCartIcon, setShowFixedCartIcon] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  
-
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isConfirmationOpen, setIsConfirmationOpen] = useState(false);
+  const [cartAnimation, setCartAnimation] = useState(false); // Состояние для анимации корзины
   const cartRef = useRef(null); // Создаем реф для корзины
+  const totalItems = props.orders.reduce((acc, el) => acc + el.quantity, 0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +53,14 @@ export default function Header(props) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    let totalItems = 0
+    if (totalItems > 0) {
+      setCartAnimation(true);
+      setTimeout(() => setCartAnimation(false), 500); // Сбрасываем анимацию после 500 мс
+    }
+  }, [totalItems]); // Срабатывает при изменении общего количества товаров
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -72,6 +87,13 @@ export default function Header(props) {
     setCartOpen(false); // Закрываем корзину
   };
 
+  const handleOrderComplete = () => {
+    // Очищаем корзину и закрываем окно оформления
+    props.onClearOrders();
+    setIsCheckoutOpen(false);
+    setIsConfirmationOpen(true);
+  };
+
   return (
     <header>
       <div>
@@ -83,25 +105,27 @@ export default function Header(props) {
           <li onClick={() => setIsAboutOpen(true)}>О нас ❔</li>
           <li onClick={() => setIsContactOpen(true)}>Контакты 📞</li>
           <li className={`cart_btn ${cartOpen && 'active'}`} onClick={() => setCartOpen(!cartOpen)}>
-            Корзина ({props.orders.length}) 🛒
+            Корзина ({props.orders.reduce((acc, el) => acc + el.quantity, 0)}) 🛒
           </li>
         </ul>
         {cartOpen && (
           <div ref={cartRef} className='shop-cart'>
             <FaXmark className='cls-btn' onClick={() => setCartOpen(!cartOpen)} />
-            {props.orders.length > 0 ? showOrders(props, handleShowItem) : showNothing()}
+            {props.orders.length > 0 ? showOrders(props, handleShowItem, setIsCheckoutOpen) : showNothing()}
           </div>
         )}
       </div>
       <div className='presentation'></div>
       {showFixedCartIcon && !cartOpen && (
-        <div className='fixed-cart' onClick={() => setCartOpen(true)}>
+        <div className={`fixed-cart ${cartAnimation ? 'animate-cart' : ''}`} onClick={() => setCartOpen(true)}>
           <FaCartShopping className="fixed-cart-icon" />
-          <div className='counter'>{props.orders.length}</div>
+          <div className='counter'>{props.orders.reduce((acc, el) => acc + el.quantity, 0)}</div>
         </div>
       )}
       {isAboutOpen && <AboutModal onClose={() => setIsAboutOpen(false)} />}
       {isContactOpen && <ContactModal onClose={() => setIsContactOpen(false)} />}
+      {isCheckoutOpen && <CheckoutModal orders={props.orders} onClose={() => setIsCheckoutOpen(false)} onOrderComplete={handleOrderComplete}/>}
+      {isConfirmationOpen && <ConfirmationModal onClose={() => setIsConfirmationOpen(false)} />}
     </header>
   );
 }

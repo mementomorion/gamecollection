@@ -10,7 +10,13 @@ body {
     color: #f1f1f1;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-
+    user-select: none;
+}
+header {
+    background: #111522;
+    color: #f1f1f1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
 }
 
 .categories {
@@ -25,7 +31,7 @@ body {
     position: relative;
     font-size: 24px;
     font-weight: 700;
-    margin: 40px 40px 40px 40px;
+    margin: 0px 40px 40px 40px;
 }
 
 .categories div {
@@ -102,7 +108,8 @@ header {
 
 header .logo {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 28px;
+    line-height: 20px;
 }
 header .logo_img{
     background: url('./img/icon.png') no-repeat;
@@ -234,6 +241,12 @@ header .shop-cart .item b {
     font-weight: 600;
     top: 12px;
 }
+header .shop-cart .item p {
+    position: relative;
+    color: #ebfcffc0;
+    font-weight: 600;
+    top: 12px;
+}
 
 header .presentation {
     margin: 50px 0;
@@ -280,7 +293,7 @@ header .shop-cart .item .delete-icon {
     color: rgb(172, 172, 172);
     float: right;
     position: relative;
-    top: 2px;
+    top: -34px;
     transition: all .3s;
     transform: scale(1.5);
 }
@@ -532,3 +545,130 @@ footer {
     text-align: center;
     margin-top: 100px;
 }
+
+.modal-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 800px;
+    height: auto;
+    background-color: #2d344b;
+    border-radius: 20px;
+    padding: 40px;
+    z-index: 11;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+  .modal-content .order-summary h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .modal-content .order-summary span{
+    font-size: 18px;
+  }
+  .modal-content p{
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+  .modal-content .checkout-details h3{
+    font-size: 24px;
+    margin: 18px 0px 18px 0px;
+  }
+  .modal-content .checkout-details label{
+    font-size: 20px;
+    margin-top: 18px;
+  }
+  .checkout-details input, .checkout-details textarea, .checkout-details select {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  .checkout-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600 !important;
+    font-size: 18px;
+    width: 100%;
+    background-color: #4a61aa;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  .checkout-btn:hover,
+  .checkout-btn:active {
+    background-color: #577fa5;
+    transform: scale(1.05);
+  }
+  .error-message {
+    color: #ff4d4d !important;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.3s ease;
+  }
+  .styled-input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .styled-input:focus {
+    border-color: #4a61aa;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0px 0px 15px rgba(74, 96, 170, 0.699);
+  }
+  
+  .input-error {
+    border: 2px solid #ff4d4d;
+    background-color: #ffe6e6;
+  }
+  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes bounce {
+    0% { transform: rotate(0deg) scale(1);}
+    25% { transform: rotate(10deg) scale(1.05);}
+    50% { transform: rotate(0deg) scale(1.1);}
+    75% { transform: rotate(-10deg) scale(1.05);}
+    100% { transform: rotate(0deg) scale(1);}
+  }
+  
+  .animate-cart {
+    animation: bounce 0.5s;
+  }
+  

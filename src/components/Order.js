@@ -9,6 +9,7 @@ export class Order extends Component {
             <img alt='Товар' src={'./img/' + this.props.item.img} onClick={() => this.props.onShowItem(this.props.item)} />
             <h3 onClick={() => this.props.onShowItem(this.props.item)}>{this.props.item.title} </h3>
             <b onClick={() => this.props.onShowItem(this.props.item)}>{this.props.item.price} rub</b>
+            <p>Количество: {this.props.item.quantity}</p> {/* Отображение количества */}
             <FaXmark  className='delete-icon' onClick={() => this.props.onDelete(this.props.item.id)} />
       </div>
     )
