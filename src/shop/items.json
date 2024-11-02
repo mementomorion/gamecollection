@@ -15,6 +15,51 @@
       "desc": "Коллекционная модель Shadow Fiend.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "dota",
+      "price": 2900
+    },
+    {
+      "id": 3,
+      "title": "Shadow Fiend - zxcursed",
+      "img": "shadow_fiend_zxcursed.png",
+      "desc": "Коллекционная модель Shadow Fiend с сетом от zxcursed.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "dota",
+      "price": 3500
+    },
+    {
+      "id": 4,
+      "title": "Pudge",
+      "img": "pudge.png",
+      "desc": "Коллекционная модель Pudge.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "dota",
+      "price": 3500
+    },
+    {
+      "id": 5,
+      "title": "Pudge Arcana",
+      "img": "no_img.png",
+      "desc": "Коллекционная модель Pudge Arcana Set.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "dota",
+      "price": 3500
+    },
+    {
+      "id": 3,
+      "title": "Glock-18 | Fade",
+      "img": "no_img.png",
+      "desc": "Коллекционная модель Glock-18 и CS2.",
+      "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак.",
+      "category": "cs",
+      "price": 3500
+    },
+    {
+      "id": 3,
+      "title": "Paimon",
+      "img": "no_img.png",
+      "desc": "Коллекционная модель Paimon из Genshin Impact.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "genshin",
       "price": 3000
     }
   ]
