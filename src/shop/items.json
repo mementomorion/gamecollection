@@ -2,11 +2,20 @@
     {
       "id": 1,
       "title": "Toy Pudge Persona",
-      "img": "toypudge.webp",
+      "img": "toy_pudge.png",
       "desc": "Коллекционная модель Toy Pudge Persona.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "dota",
-      "price": 2000
+      "price": 3000
+    },
+    {
+      "id": 2,
+      "title": "Shadow Fiend",
+      "img": "shadow_fiend.png",
+      "desc": "Коллекционная модель Shadow Fiend.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "dota",
+      "price": 3000
     }
   ]
   

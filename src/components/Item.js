@@ -7,7 +7,7 @@ export class Item extends Component {
             <img alt='Фото коллекционной фигурки' src={'./img/' + this.props.item.img} onClick={() => this.props.onShowItem(this.props.item)}/>
             <h3>{this.props.item.title}</h3>
             <p>{this.props.item.desc}</p>
-            <b>{this.props.item.price} rub</b>
+            <b>{this.props.item.price} руб.</b>
             <div className='add-to-cart' onClick={() => this.props.onAdd(this.props.item)}>В корзину</div>
         </div>
     )

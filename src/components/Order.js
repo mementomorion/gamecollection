@@ -8,7 +8,7 @@ export class Order extends Component {
             <div className='back' onClick={() => this.props.onShowItem(this.props.item)}></div>
             <img alt='Товар' src={'./img/' + this.props.item.img} onClick={() => this.props.onShowItem(this.props.item)} />
             <h3 onClick={() => this.props.onShowItem(this.props.item)}>{this.props.item.title} </h3>
-            <b onClick={() => this.props.onShowItem(this.props.item)}>{this.props.item.price} rub</b>
+            <b onClick={() => this.props.onShowItem(this.props.item)}>{this.props.item.price}₽</b>
             <p>Количество: {this.props.item.quantity}</p> {/* Отображение количества */}
             <FaXmark  className='delete-icon' onClick={() => this.props.onDelete(this.props.item.id)} />
       </div>

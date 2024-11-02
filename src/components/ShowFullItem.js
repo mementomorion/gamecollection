@@ -12,7 +12,7 @@ export class ShowFullItem extends Component {
                     <h1> </h1>
                     <p>Описание: <br></br>{this.props.item.desc}</p>
                     <p>Состав:<br></br> {this.props.item.form} </p>
-                    <b>Цена: {this.props.item.price} rub</b>
+                    <b>Цена: {this.props.item.price}₽</b>
                 <div className='add-to-cart' onClick={() => this.props.onAdd(this.props.item)}>В корзину</div>
                 </div>
             </div>
