@@ -45,7 +45,7 @@
       "price": 3500
     },
     {
-      "id": 3,
+      "id": 6,
       "title": "Glock-18 | Fade",
       "img": "no_img.png",
       "desc": "Коллекционная модель Glock-18 и CS2.",
@@ -54,13 +54,22 @@
       "price": 3500
     },
     {
-      "id": 3,
+      "id": 7,
       "title": "Paimon",
       "img": "no_img.png",
       "desc": "Коллекционная модель Paimon из Genshin Impact.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "genshin",
       "price": 3000
+    },
+    {
+      "id": 8,
+      "title": "На заказ",
+      "img": "custom.png",
+      "desc": "Ваш дизайн модели на заказ.",
+      "form": "По усмотрению.",
+      "category": "all",
+      "price": 5000
     }
   ]
   
