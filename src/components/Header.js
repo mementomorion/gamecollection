@@ -8,12 +8,15 @@ import ConfirmationModal from './ConfirmationModal';
 
 
 
-const showOrders = (props, handleShowItem, setIsCheckoutOpen) => {
+const showOrders = (props, handleShowItem, setIsCheckoutOpen, setCartOpen) => {
   let sum = 0;
   props.orders.forEach(el => sum += el.price * el.quantity); // Учет количества товаров при подсчете суммы
   return (
     <div>
-      <button className='checkout-btn' onClick={() => setIsCheckoutOpen(true)}>Оформить заказ</button>
+      <button className='checkout-btn' onClick={() => {
+        setCartOpen(false);
+        setIsCheckoutOpen(true);
+      }}>Оформить заказ</button>
       <p className='sum'>Сумма: {new Intl.NumberFormat().format(sum)} руб</p>
       {props.orders.map(el => (
         <Order onShowItem={handleShowItem} onDelete={props.onDelete} key={el.id} item={el} />
@@ -55,12 +58,13 @@ export default function Header(props) {
   }, []);
 
   useEffect(() => {
-    let totalItems = 0
     if (totalItems > 0) {
       setCartAnimation(true);
-      setTimeout(() => setCartAnimation(false), 500); // Сбрасываем анимацию после 500 мс
+      setTimeout(() => setCartAnimation(false), 500);
     }
-  }, [totalItems]); // Срабатывает при изменении общего количества товаров
+  }, [totalItems]);
+  
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -111,7 +115,7 @@ export default function Header(props) {
         {cartOpen && (
           <div ref={cartRef} className='shop-cart'>
             <FaXmark className='cls-btn' onClick={() => setCartOpen(!cartOpen)} />
-            {props.orders.length > 0 ? showOrders(props, handleShowItem, setIsCheckoutOpen) : showNothing()}
+            {props.orders.length > 0 ? showOrders(props, handleShowItem, setIsCheckoutOpen, setCartOpen) : showNothing()}
           </div>
         )}
       </div>

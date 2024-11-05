@@ -712,7 +712,10 @@ footer {
     .logo_img {
         width: 50px; /* Adjusted for smaller screens */
         height: 50px;
-        margin-right: 0px;
+        width: 150px !important;
+        height: 150px !important;
+        left: -20px !important;
+        top: 480px !important;
     }
     
     .categories {
@@ -790,7 +793,6 @@ footer {
         right: 32px;
         width: 64px;
         height: 64px;
-        z-index: 3 !important;
     }
     .counter{
         right: -5px;
@@ -799,7 +801,7 @@ footer {
         height: 32px;
     }
     .shop-cart{
-        z-index: 3;
+        z-index: 3333;
         width: 90vw !important;
         right: 20px !important;
     }
@@ -808,23 +810,35 @@ footer {
         width: 32px;
         height: 32px;
     }
+    header .shop-cart {
+        z-index: 2222 !important;
+    }
     .presentation {
         left: -12px !important;
         width: 101vw !important;
     }
     .presentation::after {
-        left: 48px !important;
-        width: 200px !important;
+        left: 44px !important;
+        width: 245px !important;
         height: 42px !important;
         font-size: 12px !important;
         line-height: 12px !important;
     }
     header .logo {
-        margin-top: 20px !important;
+        margin-top: 60px !important;
+        margin-bottom: 8px !important;
+        text-align: center;
     } 
     .nav {
         margin-top: 30px !important;
-        width: 92% !important;
+        width: 100% !important;
+        z-index: 2;
+    } 
+    .nav li {
+        background-color: rgb(31, 31, 31);
+        padding: 10px 10px 10px 10px;
+        margin-right: 10px !important;
+        border-radius: 10px;
     } 
     .categories{
         left: 50px;
