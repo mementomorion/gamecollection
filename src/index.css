@@ -818,7 +818,7 @@ footer {
         width: 101vw !important;
     }
     .presentation::after {
-        left: 44px !important;
+        left: 40px !important;
         width: 245px !important;
         height: 42px !important;
         font-size: 12px !important;
@@ -830,18 +830,18 @@ footer {
         text-align: center;
     } 
     .nav {
-        margin-top: 30px !important;
+        margin-top: 32px !important;
         width: 100% !important;
         z-index: 2;
     } 
     .nav li {
         background-color: rgb(31, 31, 31);
         padding: 10px 10px 10px 10px;
-        margin-right: 10px !important;
+        margin-right: 8px !important;
         border-radius: 10px;
     } 
     .categories{
-        left: 50px;
+        left: 42px;
         right: 0px;
         top: 590px;
     }
