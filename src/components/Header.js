@@ -106,10 +106,10 @@ export default function Header(props) {
           GameCollection - магазин игровых сувениров
         </span>
         <ul className='nav'>
-          <li onClick={() => setIsAboutOpen(true)}>О нас ❔</li>
-          <li onClick={() => setIsContactOpen(true)}>Контакты 📞</li>
+          <li onClick={() => setIsAboutOpen(true)}>О нас❔</li>
+          <li onClick={() => setIsContactOpen(true)}>Контакты📞</li>
           <li className={`cart_btn ${cartOpen && 'active'}`} onClick={() => setCartOpen(!cartOpen)}>
-            Корзина ({props.orders.reduce((acc, el) => acc + el.quantity, 0)}) 🛒
+            Корзина({props.orders.reduce((acc, el) => acc + el.quantity, 0)})🛒
           </li>
         </ul>
         {cartOpen && (
