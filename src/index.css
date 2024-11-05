@@ -68,6 +68,7 @@ header {
     right: 320px;
     padding: 16px;
     transition: all .3s;
+    z-index: 3;
 }
 
 .fixed-cart-icon {
@@ -798,6 +799,7 @@ footer {
         height: 32px;
     }
     .shop-cart{
+        z-index: 3;
         width: 90vw !important;
         right: 20px !important;
     }
