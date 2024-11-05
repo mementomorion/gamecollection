@@ -9,6 +9,8 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
   const [paymentMethod, setPaymentMethod] = useState('Credit Card');
   const [errorMessage, setErrorMessage] = useState('');
   const [shake, setShake] = useState(false);
+
+  
   const [inputErrors, setInputErrors] = useState({ phone: false, email: false, address: false });
 
   useEffect(() => {
@@ -34,7 +36,6 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
     
     if (errors.phone || errors.email || errors.address) {
       setErrorMessage('Пожалуйста, заполните все обязательные поля.');
-      setInputErrors(errors);
       setShake(true);
       setTimeout(() => setShake(false), 500);
       return;
@@ -45,12 +46,52 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
       phone,
       email,
       address,
-      paymentMethod
+      paymentMethod,
     };
-    console.log(orderDetails);
+
+    const totalAmount = orderDetails.orders.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+    const orderItems = orderDetails.orders.map(item => `${item.title} (x${item.quantity}) - ${item.price * item.quantity} руб.`).join('\n');
+
+    // Отправка данных в Telegram
+    const sendOrderToTelegram = async () => {
+      const botToken = '7858954418:AAGizRPIYD_CrfUoS6SWhN_F8Rx-Y3R0bL0';
+      const chatId = '567856098';
+      const message = `
+        Заказ!
+
+        Телефон: ${orderDetails.phone}
+        Email: ${orderDetails.email}
+        Адрес: ${orderDetails.address}
+        Метод оплаты: ${orderDetails.paymentMethod}
+        
+        Товары:
+        ${orderItems}
+        
+        Итоговая сумма: ${totalAmount} руб.
+      `;
+
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+        }),
+      });
+    };
+
+    sendOrderToTelegram()
+      .then(() => console.log('Заказ успешно отправлен в Telegram'))
+      .catch(error => console.error('Ошибка при отправке заказа в Telegram:', error));
 
     onOrderComplete();
   };
+  
+
 
   let sum = 0;
   orders.forEach(el => sum += el.price * el.quantity); // Учет количества товаров при подсчете суммы

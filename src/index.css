@@ -674,7 +674,10 @@ footer {
   .animate-cart {
     animation: bounce 0.5s;
   }
-  
+  .modal-content .head svg{
+    color: #000;
+    background-color: #fff;
+}
 @media (max-width: 768px) {
 
     * {
