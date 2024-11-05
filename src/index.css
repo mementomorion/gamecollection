@@ -23,7 +23,7 @@ header {
 
 .categories {
     position: absolute;
-    left: 40px;
+    left: 12px;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ header .logo_img{
     background-size: cover;
     background-position: center center;
     position: absolute;
-    left: -460px;
+    left: -370px;
     top: -80px;
     z-index: 1;
 }
@@ -253,7 +253,8 @@ header .shop-cart .item p {
 
 header .presentation {
     margin: 90px 0;
-    left: -452px;
+    overflow: hidden;
+    left: -330px;
     background: url('./img/poster.webp') no-repeat;
     width: 100vw;
     height: 400px;
@@ -710,7 +711,7 @@ footer {
     .logo_img {
         width: 50px; /* Adjusted for smaller screens */
         height: 50px;
-        margin-right: 10px;
+        margin-right: 0px;
     }
     
     .categories {
@@ -824,8 +825,12 @@ footer {
         width: 92% !important;
     } 
     .categories{
+        left: 50px;
         right: 0px;
         top: 590px;
+    }
+    .categories b{
+        left: 42px;
     }
     .categories div{
         height: 32px;
@@ -889,6 +894,6 @@ footer {
     }
 
     main {
-        margin-top: 286px !important;
+        margin-top: 312px !important;
     }
 }
