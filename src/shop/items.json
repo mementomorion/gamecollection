@@ -48,13 +48,22 @@
       "id": 6,
       "title": "Glock-18 | Fade",
       "img": "glock_18.png",
-      "desc": "Коллекционная модель Glock-18 и CS2.",
+      "desc": "Коллекционная модель Glock-18 из CS2.",
       "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак.",
       "category": "cs",
       "price": 5000
     },
     {
       "id": 7,
+      "title": "Karambit | Fade",
+      "img": "karambit_fade.png",
+      "desc": "Коллекционная модель легендарного karambit из CS2.",
+      "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак.",
+      "category": "cs",
+      "price": 3500
+    },
+    {
+      "id": 8,
       "title": "Paimon",
       "img": "no_img.png",
       "desc": "Коллекционная модель Paimon из Genshin Impact.",
@@ -63,7 +72,7 @@
       "price": 3500
     },
     {
-      "id": 8,
+      "id": 9,
       "title": "На заказ",
       "img": "custom.png",
       "desc": "Ваш дизайн модели на заказ.",
