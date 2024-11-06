@@ -15,7 +15,7 @@
       "desc": "Коллекционная модель Shadow Fiend.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "dota",
-      "price": 2900
+      "price": 3000
     },
     {
       "id": 3,
@@ -38,11 +38,11 @@
     {
       "id": 5,
       "title": "Pudge Arcana",
-      "img": "no_img.png",
+      "img": "pudge_arcana.png",
       "desc": "Коллекционная модель Pudge Arcana Set.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "dota",
-      "price": 3500
+      "price": 5500
     },
     {
       "id": 6,
@@ -51,7 +51,7 @@
       "desc": "Коллекционная модель Glock-18 и CS2.",
       "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак.",
       "category": "cs",
-      "price": 3500
+      "price": 5000
     },
     {
       "id": 7,
@@ -60,7 +60,7 @@
       "desc": "Коллекционная модель Paimon из Genshin Impact.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "genshin",
-      "price": 3000
+      "price": 3500
     },
     {
       "id": 8,
