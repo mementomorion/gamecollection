@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/gamecollection/static/css/main.858302ff.css",
-    "main.js": "/gamecollection/static/js/main.aa81ef33.js",
+    "main.js": "/gamecollection/static/js/main.3472a0ce.js",
     "static/media/poster0.png": "/gamecollection/static/media/poster0.ef6d595453c2e48e0685.png",
     "static/media/i.png": "/gamecollection/static/media/i.089090ade2f3c85f4977.png",
     "index.html": "/gamecollection/index.html",
     "main.858302ff.css.map": "/gamecollection/static/css/main.858302ff.css.map",
-    "main.aa81ef33.js.map": "/gamecollection/static/js/main.aa81ef33.js.map"
+    "main.3472a0ce.js.map": "/gamecollection/static/js/main.3472a0ce.js.map"
   },
   "entrypoints": [
     "static/css/main.858302ff.css",
-    "static/js/main.aa81ef33.js"
+    "static/js/main.3472a0ce.js"
   ]
 }
