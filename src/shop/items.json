@@ -82,9 +82,45 @@
     },
     {
       "id": 10,
-      "title": "Paimon",
-      "img": "no_img.png",
-      "desc": "Коллекционная модель Paimon из Genshin Impact.",
+      "title": "Hutao",
+      "img": "genshin_hutao_bad.png",
+      "desc": "Коллекционная модель Hutao из Genshin Impact.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "genshin",
+      "price": 3500
+    },
+    {
+      "id": 11,
+      "title": "Reiden",
+      "img": "genshin_reiden.png",
+      "desc": "Коллекционная модель Reiden из Genshin Impact.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "genshin",
+      "price": 3500
+    },
+    {
+      "id": 12,
+      "title": "Zhongli",
+      "img": "genshin_zhongli.png",
+      "desc": "Коллекционная модель Zhongli из Genshin Impact.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "genshin",
+      "price": 3500
+    },
+    {
+      "id": 13,
+      "title": "Xiao",
+      "img": "genshin_xiao.png",
+      "desc": "Коллекционная модель Xiao из Genshin Impact.",
+      "form": "Полимер, Акриловая краска, Лак.",
+      "category": "genshin",
+      "price": 3500
+    },
+    {
+      "id": 14,
+      "title": "Kazuha",
+      "img": "genshin_kazuha.png",
+      "desc": "Коллекционная модель Kazuha из Genshin Impact.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "genshin",
       "price": 3500
