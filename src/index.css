@@ -256,11 +256,11 @@ header .presentation {
     margin: 90px 0;
     overflow: hidden;
     left: -330px;
-    background: url('./img/poster.webp') no-repeat;
+    background: url('./img/poster0.png') no-repeat;
     width: 100vw;
     height: 400px;
     background-size: cover;
-    background-position: center 80%;
+    background-position: center 50%;
     background-blend-mode: multiply;
     background-color: #626d79b7;
     position: relative;

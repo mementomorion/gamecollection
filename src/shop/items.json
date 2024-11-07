@@ -1,6 +1,15 @@
 [
-    {
-      "id": 1,
+  {
+    "id": 1,
+    "title": "На заказ",
+    "img": "custom.png",
+    "desc": "Ваш дизайн модели на заказ.",
+    "form": "По усмотрению. Сделаем с нуля желаемую вами модель",
+    "category": "all",
+    "price": 2000
+  },
+  {
+      "id": 2,
       "title": "Toy Pudge Persona",
       "img": "toy_pudge.png",
       "desc": "Коллекционная модель Toy Pudge Persona.",
@@ -9,7 +18,7 @@
       "price": 3000
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Shadow Fiend",
       "img": "shadow_fiend.png",
       "desc": "Коллекционная модель Shadow Fiend.",
@@ -18,7 +27,7 @@
       "price": 3000
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Shadow Fiend - zxcursed",
       "img": "shadow_fiend_zxcursed.png",
       "desc": "Коллекционная модель Shadow Fiend с сетом от zxcursed.",
@@ -27,7 +36,7 @@
       "price": 3500
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Pudge",
       "img": "pudge.png",
       "desc": "Коллекционная модель Pudge.",
@@ -36,7 +45,7 @@
       "price": 3500
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Pudge Arcana",
       "img": "pudge_arcana.png",
       "desc": "Коллекционная модель Pudge Arcana Set.",
@@ -45,40 +54,40 @@
       "price": 5500
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Glock-18 | Fade",
       "img": "glock_18.png",
       "desc": "Коллекционная модель Glock-18 из CS2.",
-      "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак.",
+      "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак. Подвижная конструкция.",
       "category": "cs",
-      "price": 5000
+      "price": 4000
     },
     {
-      "id": 7,
+      "id": 8,
       "title": "Karambit | Fade",
       "img": "karambit_fade.png",
       "desc": "Коллекционная модель легендарного karambit из CS2.",
       "form": "Полимер, Акриловая краска, Краска глянцевая, Металл, Лак.",
       "category": "cs",
-      "price": 3500
+      "price": 4000
     },
     {
-      "id": 8,
+      "id": 9,
+      "title": "Pin Deadh Sentence",
+      "img": "cs_pin_dead.png",
+      "desc": "Коллекционная модель легендарного karambit из CS2.",
+      "form": "Полимер, Акриловая краска, Краска глянцевая, Лак.",
+      "category": "cs",
+      "price": 1000
+    },
+    {
+      "id": 10,
       "title": "Paimon",
       "img": "no_img.png",
       "desc": "Коллекционная модель Paimon из Genshin Impact.",
       "form": "Полимер, Акриловая краска, Лак.",
       "category": "genshin",
       "price": 3500
-    },
-    {
-      "id": 9,
-      "title": "На заказ",
-      "img": "custom.png",
-      "desc": "Ваш дизайн модели на заказ.",
-      "form": "По усмотрению.",
-      "category": "all",
-      "price": 5000
     }
   ]
   
