@@ -770,10 +770,13 @@ footer {
     header ul.nav {
         flex-direction: column; /* Stack navigation items */
         align-items: center; /* Center nav items */
+        padding-left: 26px;
+        width: 110% !important;
     }
 
     header ul.nav li {
-        margin: 10px 0; /* Vertical spacing */
+        margin: 10px 0px !important; /* Vertical spacing */
+        margin-left: 8px !important;
     }
 
     main .item {
