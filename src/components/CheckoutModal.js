@@ -6,9 +6,10 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
-  const [paymentMethod, setPaymentMethod] = useState('Credit Card');
+  const [paymentMethod, setPaymentMethod] = useState('Card');
   const [errorMessage, setErrorMessage] = useState('');
   const [shake, setShake] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
 
   
   const [inputErrors, setInputErrors] = useState({ phone: false, email: false, address: false });
@@ -47,6 +48,7 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
       email,
       address,
       paymentMethod,
+      promoCode
     };
 
     const totalAmount = orderDetails.orders.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -64,8 +66,11 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
         Email: ${orderDetails.email}
         Адрес: ${orderDetails.address}
         Метод оплаты: ${orderDetails.paymentMethod}
+        Промокод: ${orderDetails.promoCode ? orderDetails.promoCode : 'Не указан'}
+
         
         Товары:
+        
         ${orderItems}
         
         Итоговая сумма: ${totalAmount} руб.
@@ -119,6 +124,17 @@ export default function CheckoutModal({ orders, onClose, onOrderComplete }) {
         </div>
         <p className='sum'>Сумма: {new Intl.NumberFormat().format(sum)} руб</p>
         <div className='checkout-details'>
+        <div className='promo-code'>
+          <label>Промокод:
+            <input
+              type='text'
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+              placeholder='Введите промокод'
+              className='styled-input'
+            />
+          </label>
+        </div>
           <h3>Контактные данные</h3>
           <label>Телефон* :
             <input
